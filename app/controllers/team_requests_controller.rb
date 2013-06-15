@@ -10,9 +10,13 @@ class TeamRequestsController < ApplicationController
     redirect_to user_path current_user
   end
 
-  def index
+  def accept
+    TeamRequest.find(params[:id]).accept current_user
+    redirect_to user_path current_user
   end
 
-  def destroy
+  def reject
+    TeamRequest.find(params[:id]).reject current_user
+    redirect_to user_path current_user
   end
 end

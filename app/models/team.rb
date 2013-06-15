@@ -20,7 +20,7 @@ class Team < ActiveRecord::Base
   end
 
   def over_capacity?
-    self.members.count <= self::MAX_MEMBER
+    #self.team_members.count <= self::MAX_MEMBER
   end
 
   def add_request requestor
