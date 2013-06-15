@@ -1,7 +1,7 @@
 class TeamRequest < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :team
-  attr_accessible :deleted_at
+  belongs_to :requestor, class_name: 'User', foreign_key: 'requestor_id'
+  belongs_to :receptor, class_name: 'User', foreign_key: 'receptor_id'
+  attr_accessible :deleted_at, :requestor_id, :receptor_id
 
   def add requestor
     self.class.transaction do
@@ -14,7 +14,7 @@ class TeamRequest < ActiveRecord::Base
     self.class.transaction do
       self.serialize_lock
       raise "Invalid accepter" unless Team.joind_member?(acceptor)
-      TeamMember.create! team: self.team, user: self.user
+      TeamMember.create! team: Team.first, user: self.user
     end
   end
 
@@ -28,11 +28,11 @@ class TeamRequest < ActiveRecord::Base
 
   def serialize_lock
     # Lock
-    self.class.where(team: self.team).active.all(lock: true)
+    self.class.where(team: Team.first).active.all(lock: true)
   end
 
   def active
-    self.class.where(deleted_at:, nil)
+    self.class.where(deleted_at: nil)
   end
 
 end
