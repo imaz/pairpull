@@ -1,11 +1,21 @@
-%h2 チーム!!
+.show-wish-form
+  %span
+    一緒に
+    %span.current-wish
+      = @team.current_wish && @team.current_wish.title
+    したい！
+    %button 別の！
+    %button オワタ！
 
-= @team.current_wish && @team.current_wish.title
-= button_to 'pull', team_wishes_pull_path(@team), method: :get
+.pull-form
+  %legend ペアでしたいことを見る
+  = button_to 'pull', team_wishes_pull_path(@team), method: :get
 
-= form_for :wish, url: team_wishes_path(@team) do |f|
-  一緒に
-  = f.hidden_field :team_id, value: @team.id
-  = f.text_field :title
-  したい！
-  = f.submit
+.entry-wish
+  %legend したいことを追加
+  = form_for :wish, url: team_wishes_path(@team) do |f|
+    一緒に
+    = f.hidden_field :team_id, value: @team.id
+    = f.text_field :title
+    したい！
+    = f.submit
