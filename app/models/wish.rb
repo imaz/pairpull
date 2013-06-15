@@ -7,7 +7,7 @@ class Wish < ActiveRecord::Base
   end
 
   def add title
-    unless self.title.strip.empty?
+    unless title.strip.empty?
       self.class.transaction do
         self.title = title
         self.save!
