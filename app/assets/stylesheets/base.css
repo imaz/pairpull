@@ -3,7 +3,7 @@ html {
     font-family: "メイリオ","Meiryo",arial,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",Sans-Serif;    color: rgb(133, 86, 35);
     text-shadow: -1px -1px 0 rgb(255, 247, 231);
 }
-.container {
+#container {
     background-color: #fff;
     position: relative;
     margin: 40px 20px 0 20px;
@@ -11,9 +11,9 @@ html {
     padding: 20px 0;
     border-radius: 4px;
 }
-.container>header,
-.container>div,
-.container>footer {
+#container>header,
+#container>div,
+#container>footer {
     margin-left: 5.982905982905983%;
     margin-right: 5.982905982905983%;
 }
@@ -63,6 +63,7 @@ form label {
     vertical-align: middle;
 }
 input[type=text],
+input[type=email],
 input[type=password] {
     border-radius: 4px;
     border: 1px solid #8d6;
@@ -70,6 +71,7 @@ input[type=password] {
     padding: 8px;
 }
 input[type=text]:focus,
+input[type=email]:focus,
 input[type=password]:focus {
     box-shadow: 0 0 12px #8d6, 0 0 4px #fff;
     outline: 0;
