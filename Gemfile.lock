@@ -1,6 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    act-fluent-logger-rails (0.0.4)
+      fluent-logger
+      rails
     actionmailer (3.2.13)
       actionpack (= 3.2.13)
       mail (~> 2.5.3)
@@ -188,6 +191,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  act-fluent-logger-rails
   activeadmin
   acts_as_paranoid
   coffee-rails (~> 3.2.1)
