@@ -30,6 +30,8 @@ gem 'inherited_resources'
 
 gem 'devise'
 
+gem 'acts_as_paranoid'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
