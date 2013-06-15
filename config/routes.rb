@@ -1,7 +1,9 @@
 Pairpull::Application.routes.draw do
   devise_for :users
 
-  resources :teams, only: [:show]
+  resources :teams, only: [:show] do
+    get 'wishes/pull'
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

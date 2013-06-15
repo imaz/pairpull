@@ -1,2 +1,4 @@
-%h1 Team#show
-%p Find me in app/views/team/show.html.haml
+%h2 チーム!!
+
+= @team.current_wish && @team.current_wish.title
+= link_to 'pull', team_wishes_pull_path(current_user.teams.first)
