@@ -3,7 +3,7 @@ class CreateWishes < ActiveRecord::Migration
     create_table :wishes do |t|
       t.references :team
       t.string :title
-      t.boolean :done
+      t.boolean :done, default: false
 
       t.timestamps
     end
