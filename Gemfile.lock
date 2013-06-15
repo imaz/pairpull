@@ -159,6 +159,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   haml
   haml-rails
+  inherited_resources
   jquery-rails
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
