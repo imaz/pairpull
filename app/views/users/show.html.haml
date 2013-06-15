@@ -1,2 +1,13 @@
-%h1 Users#show
-%p Find me in app/views/users/show.html.haml
+%section
+  %h2 あいかたリスト
+  miio
+  onjiro
+%section
+  %h2 ペア申し込まれ中リスト
+  mohya
+%section
+  %h2 ペア申請をする
+  name
+  = form_for :team_request do |f|
+    = text_field_tag :user_name
+    = f.submit
