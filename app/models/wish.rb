@@ -29,7 +29,7 @@ class Wish < ActiveRecord::Base
 
   def to_log_format log_type
     {
-      log_type: log_type
+      log_type: log_type,
       wish_id: self.id,
       team_id: self.team_id,
     }
