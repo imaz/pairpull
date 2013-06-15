@@ -1,3 +1,4 @@
+require 'fluent-logger'
 class Wish < ActiveRecord::Base
   belongs_to :team
   attr_accessible :done, :title, :team_id
@@ -15,7 +16,7 @@ class Wish < ActiveRecord::Base
   end
 
 
-  def done
+  def exec_done
     self.class.transaction do
       obj = self.team.class.find(self.team, lock: true)
       obj.current_wish = nil
@@ -26,10 +27,10 @@ class Wish < ActiveRecord::Base
     end
   end
 
-  def to_log_fromat
+
+  def to_log_format
     {
       wish_id: self.id,
-      user_id: self.user_id,
       team_id: self.team_id,
     }
   end

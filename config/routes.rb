@@ -6,6 +6,7 @@ Pairpull::Application.routes.draw do
   resources :team_requests, only: [:index, :create, :destroy]
   resources :teams, only: [:show] do
     get 'wishes/pull'
+    get 'wishes/done'
     resources :wishes, only: [:create]
   end
 
