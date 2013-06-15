@@ -11,3 +11,4 @@
   = form_for :user_request, url: team_requests_path do |f|
     = text_field_tag :user_name
     = f.submit
+  = flash[:team_request]
