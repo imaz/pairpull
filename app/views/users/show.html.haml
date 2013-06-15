@@ -1,10 +1,13 @@
+= link_to 'ログアウト', destroy_user_session_path, method: :delete
+
 %section
   %h2 あいかたリスト
   miio
   onjiro
 %section
   %h2 ペア申し込まれ中リスト
-  mohya
+  - @requestors.each do |requestor|
+    = requestor.name
 %section
   %h2 ペア申請をする
   name
