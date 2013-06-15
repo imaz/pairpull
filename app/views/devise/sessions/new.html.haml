@@ -1,16 +1,23 @@
-%h2 Sign in
+.description
+  %p ペアプルはパートナーといっしょにやりたいことを登録しておくサービスです。
+  %p
+    登録した内容はランダムにプル（引き出す）できます。表示される内容はパートナーと同じです。
+    %br
+    パートナーといっしょにしたいと思っていること、パートナーが自分といっしょにしたいと思っていることを共有してみませんか？
+%legend ログイン
 = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email, :autofocus => true
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password
-  - if devise_mapping.rememberable?
-    %div
-      = f.check_box :remember_me
-      = f.label :remember_me
-  %div= f.submit "Sign in"
-= render "devise/shared/links"
+  .control-group
+    .controls
+      = f.label :email
+      = f.email_field :email, :autofocus => true
+    .controls
+      = f.label :password
+      = f.password_field :password
+    - if devise_mapping.rememberable?
+      .controls
+        = f.check_box :remember_me
+        = f.label :remember_me
+    .controls
+      = f.submit "Sign in"
+    .controls
+      = render "devise/shared/links"

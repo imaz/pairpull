@@ -1,0 +1,116 @@
+html {
+    background-color: #fc8;
+    font-family: "メイリオ","Meiryo",arial,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",Sans-Serif;    color: rgb(133, 86, 35);
+    text-shadow: -1px -1px 0 rgb(255, 247, 231);
+}
+a {
+    color: #6a3;
+}
+a:visited {
+    color: #260;
+}
+a:hover,
+a:focus {
+    color: #8d6;
+}
+#container {
+    background-color: #fff;
+    position: relative;
+    margin: 40px 20px 0 20px;
+    *zoom: 1;
+    padding: 20px 0;
+    border-radius: 4px;
+}
+#container>header,
+#container>div,
+#container>footer {
+    margin-left: 5.982905982905983%;
+    margin-right: 5.982905982905983%;
+}
+header {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+h1 {
+    border-bottom: 1px solid #8d6;
+    box-shadow: 0px 1px 0 #eee;
+}
+.description {
+    background-color: rgb(211, 255, 220);
+    padding: 24px;
+    margin-left: 24px;
+    margin-right: 24px;
+    border-radius: 4px;
+}
+#contents {
+    padding-bottom: 20px;
+}
+legend {
+    font-weight: bold;
+    font-size: 124%;
+    border-bottom: 1px solid #8d6;
+    box-shadow: 0px 1px 0 #eee;
+    margin: 20px 0 20px 0;
+    width: 80%;
+}
+form .controls {
+    margin-left: 160px;
+    margin-bottom: 16px;
+}
+form .controls:after {
+    content: "";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+form label {
+    float: left;
+    margin-left: -160px;
+    width: 140px;
+    padding-top: 8px;
+    text-align: right;
+    vertical-align: middle;
+}
+input[type=text],
+input[type=email],
+input[type=password] {
+    border-radius: 4px;
+    border: 1px solid #8d6;
+    transition: box-shadow linear 0.4s;
+    padding: 8px;
+}
+input[type=checkbox] {
+    margin-top: 12px;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=checkbox]:focus {
+    box-shadow: 0 0 12px #8d6, 0 0 4px #fff;
+    outline: 0;
+}
+input[type=submit] {
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #fff;
+    text-shadow: -1px -1px 0 #666;
+    background-image: linear-gradient(to bottom, #8d6, #7c4);
+    border: 1px solid #8d6;
+}
+input[type=submit]:hover,
+input[type=submit]:focus {
+    background-image: linear-gradient(to bottom, #9e8, #8d6);
+    text-shadow: -1px -1px 0 #888;
+    outline: 0;
+}
+input[type=submit]:active {
+    text-shadow: -1px -1px 0 #444;
+    background-image: linear-gradient(to bottom, #7c4, #6b3);
+}
+footer {
+    color: #aaa;
+    font-size: x-small;
+    text-shadow: -1px -1px 0 #eee;
+    text-align: center;
+}
