@@ -3,9 +3,9 @@ class TeamRequestsController < ApplicationController
     receptor = User.find_by_name(params[:user_name])
     if receptor
       TeamRequest.new.add current_user, receptor
-      flash[:team_request] = 'Requested'
+      flash[:team_request] = '申し込みました'
     else
-      flash[:team_request] = 'Invalid user name'
+      flash[:team_request] = '登録されていないユーザです'
     end
     redirect_to user_path current_user
   end

@@ -5,12 +5,12 @@
       %span.current-wish
         = @team.current_wish && @team.current_wish.title
       したい！
-      = button_to '別の！', team_wishes_skip_path(@team), method: :get
-      = button_to 'オワタ！', team_wishes_done_path(@team), method: :post
+      = button_to 'これは後にする', team_wishes_skip_path(@team), method: :get
+      = button_to 'できた！', team_wishes_done_path(@team), method: :post
 -else
   .pull-form
-    %legend ペアでしたいことを見る
-    = button_to 'pull', team_wishes_pull_path(@team), method: :get
+    %legend ペアでしたいことを引き出す
+    = button_to 'プル', team_wishes_pull_path(@team), method: :get
 
 .entry-wish
   %legend したいことを追加
@@ -19,4 +19,4 @@
     = f.hidden_field :team_id, value: @team.id
     = f.text_field :title
     したい！
-    = f.submit
+    = f.submit 'プッシュ'

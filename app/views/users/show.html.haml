@@ -3,13 +3,13 @@
     = link_to 'ログアウト', destroy_user_session_path, {:method => :delete, :class => 'btn'}
 
 %section
-  %h2 あいかたリスト
+  %h2 ペアプルパートナー
   %table
     - @team_members.each do |member|
       %tr
         %td= link_to member.user.name, team_path(member.team)
 %section
-  %h2 ペア申し込まれ中リスト
+  %h2 あなたとペアプルしたい人
   %table
     - @team_requests.each do |request|
       %tr
@@ -17,7 +17,7 @@
         %td= button_to 'ペアになる', accept_team_request_path(request)
         %td= button_to 'おことわり', reject_team_request_path(request)
 %section
-  %h2 ペア申請をする
+  %h2 パートナーになる
   ユーザー名
   = form_for :user_request, url: team_requests_path do |f|
     = text_field_tag :user_name
