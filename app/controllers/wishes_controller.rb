@@ -35,7 +35,7 @@ class WishesController < ApplicationController
       unless team.current_wish.nil?
         team.current_wish = team.wishes.where(done: false).sample
         team.save!
-        team.skip_logging team.current_wish
+        team.skip_logging team.current_wish.id
       end
     end
     redirect_to team_path team_id
