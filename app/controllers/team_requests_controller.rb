@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 class TeamRequestsController < ApplicationController
   def create
     receptor = User.find_by_name(params[:user_name])
