@@ -1,4 +1,3 @@
-require 'fluent-logger'
 class Wish < ActiveRecord::Base
   belongs_to :team
   attr_accessible :done, :title, :team_id
@@ -11,7 +10,7 @@ class Wish < ActiveRecord::Base
     self.class.transaction do
       self.title = title
       self.save!
-      Fluent::Logger.post("wish_add", self.to_log_format)
+      logger.info(self.to_log_format("wish_add"))
     end
   end
 
@@ -23,13 +22,14 @@ class Wish < ActiveRecord::Base
       obj.save!
       self.done = true
       self.save!
-      Fluent::Logger.post("wish_done", self.to_log_format)
+      logger.info(self.to_log_format("wish_done"))
     end
   end
 
 
-  def to_log_format
+  def to_log_format log_type
     {
+      log_type: log_type
       wish_id: self.id,
       team_id: self.team_id,
     }
