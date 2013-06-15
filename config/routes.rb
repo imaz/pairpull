@@ -1,6 +1,8 @@
 Pairpull::Application.routes.draw do
   devise_for :users
 
+  resources :users, only: [:show]
+
   resources :teams, only: [:show] do
     get 'wishes/pull'
     resources :wishes, only: [:create]
