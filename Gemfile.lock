@@ -67,6 +67,9 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     fastercsv (1.5.5)
+    fluent-logger (0.4.5)
+      msgpack (= 0.4.7)
+      yajl-ruby (~> 1.0)
     formtastic (2.2.1)
       actionpack (>= 3.0)
     haml (4.0.3)
@@ -101,6 +104,7 @@ GEM
       polyamorous (~> 0.5.0)
     method_source (0.8.1)
     mime-types (1.23)
+    msgpack (0.4.7)
     multi_json (1.7.7)
     mysql2 (0.3.11)
     orm_adapter (0.4.0)
@@ -171,6 +175,7 @@ GEM
       raindrops (~> 0.7)
     warden (1.2.1)
       rack (>= 1.0)
+    yajl-ruby (1.1.0)
     yard (0.8.6.1)
 
 PLATFORMS
@@ -181,6 +186,7 @@ DEPENDENCIES
   acts_as_paranoid
   coffee-rails (~> 3.2.1)
   devise
+  fluent-logger
   haml
   haml-rails
   inherited_resources
