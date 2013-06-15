@@ -30,7 +30,7 @@ class Team < ActiveRecord::Base
   end
 
   def skip_logging wish_id
-      logger.info(self.to_log_format(wish_id, "wish_skip"))
+      logger.info(self.to_log_format(wish_id, "skip_wish"))
   end
 
   def to_log_format wish_id, log_type
