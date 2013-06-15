@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 class Wish < ActiveRecord::Base
   belongs_to :team
   attr_accessible :done, :title, :team_id
@@ -7,7 +8,7 @@ class Wish < ActiveRecord::Base
   end
 
   def add title
-    unless title.strip.empty?
+    unless title.gsub("　","").strip.empty?
       self.class.transaction do
         self.title = title
         self.save!
