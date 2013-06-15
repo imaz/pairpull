@@ -6,4 +6,9 @@ class WishesController < ApplicationController
     @team.save
     redirect_to team_path team_id
   end
+
+  def create
+    Wish.create!(params[:wish])
+    redirect_to team_path params[:team_id]
+  end
 end

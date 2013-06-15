@@ -3,6 +3,7 @@ Pairpull::Application.routes.draw do
 
   resources :teams, only: [:show] do
     get 'wishes/pull'
+    resources :wishes, only: [:create]
   end
 
   # The priority is based upon order of creation:
