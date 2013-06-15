@@ -131,6 +131,12 @@ input[type=submit]:active {
     text-shadow: -1px -1px 0 #444;
     background-image: linear-gradient(to bottom, #7c4, #6b3);
 }
+.show-wish-form form {
+    display: inline;
+}
+.show-wish-form form div {
+    display: inline;
+}
 .current-wish:before,
 .current-wish:after {
     content: "\"";

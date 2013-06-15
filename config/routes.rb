@@ -13,7 +13,8 @@ Pairpull::Application.routes.draw do
   post 'team_requests/reject'
   resources :teams, only: [:show] do
     get 'wishes/pull'
-    get 'wishes/done'
+    get 'wishes/skip'
+    post 'wishes/done'
     resources :wishes, only: [:create]
   end
 
