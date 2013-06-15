@@ -7,7 +7,10 @@ class Wish < ActiveRecord::Base
   end
 
   def add title
-    self.title = title
+    self.class.transaction do
+      self.title = title
+      self.save!
+    end
   end
 
 
