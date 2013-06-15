@@ -102,6 +102,7 @@ input[type=submit] {
     padding: 4px 8px;
     border-radius: 4px;
     color: #fff;
+    text-decoration: none;
     text-shadow: -1px -1px 0 #666;
     background-image: linear-gradient(to bottom, #8d6, #7c4);
     border: 1px solid #8d6;
