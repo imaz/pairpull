@@ -7,6 +7,6 @@ class CreateWishes < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :wishes, :team_id
+    add_index :wishes, [:team_id, :done]
   end
 end
