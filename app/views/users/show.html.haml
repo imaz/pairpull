@@ -6,8 +6,12 @@
   onjiro
 %section
   %h2 ペア申し込まれ中リスト
-  - @requestors.each do |requestor|
-    = requestor.name
+  %table
+    - @team_requests.each do |request|
+      %tr
+        %td= request.requestor.name
+        %td= button_to 'ペアになる', accept_team_request_path(request)
+        %td= button_to 'おことわり', reject_team_request_path(request)
 %section
   %h2 ペア申請をする
   name

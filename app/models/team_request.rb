@@ -14,8 +14,9 @@ class TeamRequest < ActiveRecord::Base
   def accept acceptor
     self.class.transaction do
       lock = self.serialize_lock
-      lock.deleted_at.present?
+      if lock.deleted_at.present?
         raise 'Already deleted'
+      end
       unless acceptor == receptor
         raise 'Invalid request'
       end
@@ -30,8 +31,9 @@ class TeamRequest < ActiveRecord::Base
   def reject rejector
     self.class.transaction do
       lock = self.serialize_lock
-      lock.deleted_at.present?
+      if lock.deleted_at.present?
         raise 'Already deleted'
+      end
       unless rejector == receptor
         raise 'Invalid request'
       end
