@@ -3,32 +3,46 @@ class TeamRequest < ActiveRecord::Base
   belongs_to :receptor, class_name: 'User', foreign_key: 'receptor_id'
   attr_accessible :deleted_at, :requestor_id, :receptor_id
 
-  def add requestor
+  def add requestor, receptor
     self.class.transaction do
-      self.users = requestor
+      self.requestor = requestor
+      self.receptor = receptor
       self.save!
     end
   end
 
   def accept acceptor
     self.class.transaction do
-      self.serialize_lock
-      raise "Invalid accepter" unless Team.joind_member?(acceptor)
-      TeamMember.create! team: Team.first, user: self.user
+      lock = self.serialize_lock
+      lock.deleted_at.present?
+        raise 'Already deleted'
+      unless acceptor == receptor
+        raise 'Invalid request'
+      end
+
+      team = Team.create!
+      TeamMember.create! team: team, user: self.requestor
+      TeamMember.create! team: team, user: self.receptor
+      self.destroy
     end
   end
 
   def reject rejector
     self.class.transaction do
-      self.serialize_lock
-      raise "Invalid accepter" unless Team.joined_member?(acceptor)
+      lock = self.serialize_lock
+      lock.deleted_at.present?
+        raise 'Already deleted'
+      unless rejector == receptor
+        raise 'Invalid request'
+      end
+
       self.destroy
     end
   end
 
   def serialize_lock
     # Lock
-    self.class.where(team: Team.first).active.all(lock: true)
+    self.class.find(self, lock: true)
   end
 
   def active
