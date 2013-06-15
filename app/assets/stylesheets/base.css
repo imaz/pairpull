@@ -96,6 +96,7 @@ input[type=checkbox]:focus {
     display: inline-block;
 }
 .btn,
+a.btn,
 button,
 input[type=submit] {
     padding: 4px 8px;
