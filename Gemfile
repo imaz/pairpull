@@ -44,3 +44,13 @@ gem 'unicorn'
 
 # To use debugger
 # gem 'debugger'
+
+group :production do
+  gem 'mysql2'
+end
+
+group :development do
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'pry-rails'
+end
