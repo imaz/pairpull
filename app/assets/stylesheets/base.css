@@ -28,8 +28,8 @@ a:focus {
     margin-right: 5.982905982905983%;
 }
 header {
-    padding-top: 80px;
-    padding-bottom: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 h1 {
     border-bottom: 1px solid #8d6;
@@ -43,7 +43,7 @@ h1 {
     border-radius: 4px;
 }
 #contents {
-    padding-bottom: 80px;
+    padding-bottom: 20px;
 }
 legend {
     font-weight: bold;
@@ -109,7 +109,8 @@ input[type=submit]:active {
     background-image: linear-gradient(to bottom, #7c4, #6b3);
 }
 footer {
-    color: #ccc;
+    color: #aaa;
     font-size: x-small;
     text-shadow: -1px -1px 0 #eee;
+    text-align: center;
 }
