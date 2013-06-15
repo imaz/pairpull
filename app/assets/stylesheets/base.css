@@ -92,6 +92,7 @@ input[type=checkbox]:focus {
     box-shadow: 0 0 12px #8d6, 0 0 4px #fff;
     outline: 0;
 }
+.btn,
 button,
 input[type=submit] {
     padding: 4px 8px;
@@ -101,14 +102,18 @@ input[type=submit] {
     background-image: linear-gradient(to bottom, #8d6, #7c4);
     border: 1px solid #8d6;
 }
+.btn:hover,
+.btn:focus,
 button:hover,
 button:focus,
 input[type=submit]:hover,
 input[type=submit]:focus {
+    color: #fff;
     background-image: linear-gradient(to bottom, #9e8, #8d6);
     text-shadow: -1px -1px 0 #888;
     outline: 0;
 }
+.btn:active,
 button:active,
 input[type=submit]:active {
     text-shadow: -1px -1px 0 #444;

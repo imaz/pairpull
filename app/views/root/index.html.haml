@@ -8,9 +8,11 @@
 .control-form
   %legend はじめる
   .control-group
-    .controls
-      = link_to 'ログイン', 'users/sign_in'
-      %br
-      = link_to 'Sign Up' , 'users/sign_up'
-    .controls
-      入る
+    -if user_signed_in?
+      .controls
+        = link_to '入る', "users/#{current_user.id}", {:class => 'btn'}
+    -else
+      .controls
+        = link_to 'ログイン', 'users/sign_in', {:class => 'btn'}
+        %br
+        = link_to 'Sign Up' , 'users/sign_up'
