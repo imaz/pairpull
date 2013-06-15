@@ -6,4 +6,10 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = yield
+    #container
+      %header
+        %h1 ペアプル
+      #contents
+        = yield
+      %footer
+        &copy; 2013 Team pairpull All rights reserved.

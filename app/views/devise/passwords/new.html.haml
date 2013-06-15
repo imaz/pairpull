@@ -1,0 +1,11 @@
+%legend パスワードを忘れたとき
+= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+  = devise_error_messages!
+  .control-group
+    .controls
+      = f.label :email, "メールアドレス"
+      = f.email_field :email, :autofocus => true
+    .controls
+      = f.submit "リセットしたパスワードを送る"
+    .controls
+      = render "devise/shared/links"

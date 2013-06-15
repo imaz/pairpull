@@ -24,6 +24,17 @@ end
 
 gem 'jquery-rails'
 
+gem 'activeadmin'
+
+gem 'inherited_resources'
+
+gem 'devise'
+
+gem 'acts_as_paranoid'
+
+gem "fluent-logger"
+
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -31,10 +42,24 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
+
+group :production do
+  gem 'mysql2'
+  gem 'act-fluent-logger-rails'
+  gem 'dalli'
+  gem 'memcached'
+end
+
+group :development do
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  gem 'thin'
+end

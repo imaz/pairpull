@@ -1,0 +1,25 @@
+.control-group
+  .conntrol
+    = link_to 'ログアウト', destroy_user_session_path, {:method => :delete, :class => 'btn'}
+
+%section
+  %h2 ペアプルパートナー
+  %table
+    - @team_members.each do |member|
+      %tr
+        %td= link_to member.user.name, team_path(member.team)
+%section
+  %h2 あなたとペアプルしたい人
+  %table
+    - @team_requests.each do |request|
+      %tr
+        %td= request.requestor.name
+        %td= button_to 'ペアになる', accept_team_request_path(request)
+        %td= button_to 'おことわり', reject_team_request_path(request)
+%section
+  %h2 パートナーになる
+  ユーザー名
+  = form_for :user_request, url: team_requests_path do |f|
+    = text_field_tag :user_name
+    = f.submit "申し込む"
+  = flash[:team_request]

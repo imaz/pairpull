@@ -1,0 +1,20 @@
+%legend Sign up
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  = devise_error_messages!
+  .control-group
+    .controls
+      = f.label :name, "名前"
+      = f.text_field :name, :autofocus => true
+    .controls
+      = f.label :email, "メールアドレス"
+      = f.email_field :email, :autofocus => true
+    .controls
+      = f.label :password, "パスワード"
+      = f.password_field :password
+    .controls
+      = f.label :password_confirmation, "パスワード確認"
+      = f.password_field :password_confirmation
+    .controls
+      = f.submit "新規登録"
+    .controls
+      = render "devise/shared/links"
