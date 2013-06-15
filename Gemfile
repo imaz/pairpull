@@ -53,6 +53,7 @@ gem 'unicorn'
 group :production do
   gem 'mysql2'
   gem 'act-fluent-logger-rails'
+  gem 'dalli'
 end
 
 group :development do
