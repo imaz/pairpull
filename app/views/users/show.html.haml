@@ -1,0 +1,13 @@
+%section
+  %h2 あいかたリスト
+  miio
+  onjiro
+%section
+  %h2 ペア申し込まれ中リスト
+  mohya
+%section
+  %h2 ペア申請をする
+  name
+  = form_for :user_request, url: team_requests_path do |f|
+    = text_field_tag :user_name
+    = f.submit
