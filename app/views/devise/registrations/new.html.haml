@@ -3,18 +3,18 @@
   = devise_error_messages!
   .control-group
     .controls
-      = f.label :name
+      = f.label :name, "名前"
       = f.text_field :name, :autofocus => true
     .controls
-      = f.label :email
-      = f.email_field :email
+      = f.label :email, "メールアドレス"
+      = f.email_field :email, :autofocus => true
     .controls
-      = f.label :password
+      = f.label :password, "パスワード"
       = f.password_field :password
     .controls
-      = f.label :password_confirmation
+      = f.label :password_confirmation, "パスワード確認"
       = f.password_field :password_confirmation
     .controls
-      = f.submit "Sign up"
+      = f.submit "登録"
     .controls
       = render "devise/shared/links"

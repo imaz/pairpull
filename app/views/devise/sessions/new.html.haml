@@ -8,16 +8,16 @@
 = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
   .control-group
     .controls
-      = f.label :email
+      = f.label :email, "メールアドレス"
       = f.email_field :email, :autofocus => true
     .controls
-      = f.label :password
+      = f.label :password, "パスワード"
       = f.password_field :password
     - if devise_mapping.rememberable?
       .controls
         = f.check_box :remember_me
-        = f.label :remember_me
+        = f.label :remember_me, "パスワードを記憶"
     .controls
-      = f.submit "Sign in"
+      = f.submit "ログイン"
     .controls
       = render "devise/shared/links"
