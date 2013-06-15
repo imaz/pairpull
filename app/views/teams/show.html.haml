@@ -5,7 +5,7 @@
       = @team.current_wish && @team.current_wish.title
     したい！
     %button 別の！
-    %button オワタ！
+    = button_to 'オワタ！', team_wishes_done_path(@team), method: :get
 
 .pull-form
   %legend ペアでしたいことを見る
