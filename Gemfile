@@ -54,6 +54,7 @@ group :production do
   gem 'mysql2'
   gem 'act-fluent-logger-rails'
   gem 'dalli'
+  gem 'memcached'
 end
 
 group :development do
