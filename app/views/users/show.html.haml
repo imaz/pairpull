@@ -10,8 +10,8 @@
     = requestor.name
 %section
   %h2 ペア申請をする
-  name
+  ユーザー名
   = form_for :user_request, url: team_requests_path do |f|
     = text_field_tag :user_name
-    = f.submit
+    = f.submit "申し込む"
   = flash[:team_request]
