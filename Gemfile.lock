@@ -157,6 +157,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   coffee-rails (~> 3.2.1)
+  devise
   haml
   haml-rails
   inherited_resources
