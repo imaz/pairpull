@@ -1,6 +1,8 @@
+@charset "utf-8";
 html {
     background-color: #fc8;
-    font-family: "メイリオ","Meiryo",arial,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",Sans-Serif;    color: rgb(133, 86, 35);
+    font-family: "メイリオ","Meiryo",arial,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",Sans-Serif;
+    color: #862;
     text-shadow: -1px -1px 0 rgb(255, 247, 231);
 }
 a {
@@ -90,6 +92,7 @@ input[type=checkbox]:focus {
     box-shadow: 0 0 12px #8d6, 0 0 4px #fff;
     outline: 0;
 }
+button,
 input[type=submit] {
     padding: 4px 8px;
     border-radius: 4px;
@@ -98,15 +101,35 @@ input[type=submit] {
     background-image: linear-gradient(to bottom, #8d6, #7c4);
     border: 1px solid #8d6;
 }
+button:hover,
+button:focus,
 input[type=submit]:hover,
 input[type=submit]:focus {
     background-image: linear-gradient(to bottom, #9e8, #8d6);
     text-shadow: -1px -1px 0 #888;
     outline: 0;
 }
+button:active,
 input[type=submit]:active {
     text-shadow: -1px -1px 0 #444;
     background-image: linear-gradient(to bottom, #7c4, #6b3);
+}
+.current-wish:before,
+.current-wish:after {
+    content: "\"";
+}
+.current-wish {
+    font-weight: 800;
+    font-size: 182%;
+    color: #e82;
+    text-shadow: -1px -1px 0 #a86 inset, 1px 1px 0 #eee;
+    border: 3px solid #8d6;
+    padding: 4px;
+    border-radius: 8px;
+    transition: box-shadow linear 0.4s;
+}
+.current-wish:hover {
+    box-shadow: 0 0 2px #fff, 0 0 4px #efd, 0 0 16px #8d6;
 }
 footer {
     color: #aaa;
