@@ -57,4 +57,5 @@ group :development do
   gem 'pry'
   gem 'pry-doc'
   gem 'pry-rails'
+  gem 'thin'
 end
