@@ -2,8 +2,10 @@
 
 %section
   %h2 あいかたリスト
-  miio
-  onjiro
+  %table
+    - @team_members.each do |member|
+      %tr
+        %td= link_to member.user.name, team_path(member.team)
 %section
   %h2 ペア申し込まれ中リスト
   %table

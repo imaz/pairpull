@@ -11,4 +11,9 @@ class User < ActiveRecord::Base
 
   has_many :team_members
   has_many :teams, through: :team_members
+
+  def joined_teams
+    team_ids = TeamMember.where(user_id: self).pluck(:team_id)
+    TeamMember.where(team_id: team_ids).where("user_id != ?", self).includes(:user).all
+  end
 end
