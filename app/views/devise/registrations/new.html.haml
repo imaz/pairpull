@@ -1,17 +1,17 @@
-%h2 Sign up
+%legend Sign up
 = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
   = devise_error_messages!
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email, :autofocus => true
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password
-  %div
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  %div= f.submit "Sign up"
-= render "devise/shared/links"
+  .control-group
+    .controls
+      = f.label :email
+      = f.email_field :email, :autofocus => true
+    .controls
+      = f.label :password
+      = f.password_field :password
+    .controls
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation
+    .controls
+      = f.submit "Sign up"
+    .controls
+      = render "devise/shared/links"
