@@ -1,4 +1,8 @@
 @charset "utf-8";
+@font-face {
+  font-family: 'yasashisa';
+  src: url('yasashisa.ttf') format('truetype');
+}
 html {
     background-color: #fc8;
     font-family: "メイリオ","Meiryo",arial,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",Sans-Serif;
@@ -34,8 +38,10 @@ header {
     padding-bottom: 12px;
 }
 h1 {
+    font-size: 300%;
     border-bottom: 1px solid #8d6;
     box-shadow: 0px 1px 0 #eee;
+    font-family: "yasashisa","メイリオ","Meiryo",arial,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",Sans-Serif;
 }
 .description {
     background-color: rgb(211, 255, 220);
@@ -48,6 +54,7 @@ h1 {
     padding-bottom: 20px;
 }
 legend {
+    font-family: "yasashisa","メイリオ","Meiryo",arial,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",Sans-Serif;
     font-weight: bold;
     font-size: 124%;
     border-bottom: 1px solid #8d6;
