@@ -1,7 +1,7 @@
 %h2 チーム!!
 
 = @team.current_wish && @team.current_wish.title
-= link_to 'pull', team_wishes_pull_path(@team)
+= button_to 'pull', team_wishes_pull_path(@team), method: :get
 
 = form_for :wish, url: team_wishes_path(@team) do |f|
   一緒に
