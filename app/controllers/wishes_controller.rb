@@ -10,7 +10,10 @@ class WishesController < ApplicationController
   end
 
   def create
-    Wish.create!(params[:wish])
+    Wish.transaction do
+      w = Wish.new params[:wish]
+      w.add params[:wish][:title]
+    end
     redirect_to team_path params[:team_id]
   end
 
