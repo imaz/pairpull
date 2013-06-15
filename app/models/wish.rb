@@ -7,7 +7,11 @@ class Wish < ActiveRecord::Base
   end
 
   def add title
-    self.title = title
+    self.class.transaction do
+      self.title = title
+      self.save!
+      Fluent::Logger.post("wish_add", self.to_log_format)
+    end
   end
 
 
@@ -18,7 +22,15 @@ class Wish < ActiveRecord::Base
       obj.save!
       self.done = true
       self.save!
+      Fluent::Logger.post("wish_done", self.to_log_format)
     end
   end
 
+  def to_log_fromat
+    {
+      wish_id: self.id,
+      user_id: self.user_id,
+      team_id: self.team_id,
+    }
+  end
 end
