@@ -3,6 +3,16 @@ html {
     font-family: "メイリオ","Meiryo",arial,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",Sans-Serif;    color: rgb(133, 86, 35);
     text-shadow: -1px -1px 0 rgb(255, 247, 231);
 }
+a {
+    color: #6a3;
+}
+a:visited {
+    color: #260;
+}
+a:hover,
+a:focus {
+    color: #8d6;
+}
 #container {
     background-color: #fff;
     position: relative;
@@ -70,9 +80,13 @@ input[type=password] {
     transition: box-shadow linear 0.4s;
     padding: 8px;
 }
+input[type=checkbox] {
+    margin-top: 12px;
+}
 input[type=text]:focus,
 input[type=email]:focus,
-input[type=password]:focus {
+input[type=password]:focus,
+input[type=checkbox]:focus {
     box-shadow: 0 0 12px #8d6, 0 0 4px #fff;
     outline: 0;
 }
