@@ -29,4 +29,15 @@ class Team < ActiveRecord::Base
     req.add requestor
   end
 
+  def skip_logging wish_id
+      logger.info(self.to_log_format(wish_id, "skip_wish"))
+  end
+
+  def to_log_format wish_id, log_type
+    {
+      log_type: log_type,
+      wish_id: wish_id,
+      team_id: self.id,
+    }
+  end
 end

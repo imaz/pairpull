@@ -7,10 +7,12 @@ class Wish < ActiveRecord::Base
   end
 
   def add title
-    self.class.transaction do
-      self.title = title
-      self.save!
-      logger.info(self.to_log_format("wish_add"))
+    unless title.strip.empty?
+      self.class.transaction do
+        self.title = title
+        self.save!
+        logger.info(self.to_log_format("wish_add"))
+      end
     end
   end
 
