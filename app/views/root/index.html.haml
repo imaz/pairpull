@@ -1,0 +1,18 @@
+.description
+  %p ペアプルはパートナーといっしょにやりたいことを登録しておくサービスです。
+  %p
+    登録した内容はランダムにプル（引き出す）できます。表示される内容はパートナーと同じです。
+    %br
+    パートナーといっしょにしたいと思っていること、パートナーが自分といっしょにしたいと思っていることを共有してみませんか？
+
+.control-form
+  %legend はじめる
+  .control-group
+    -if user_signed_in?
+      .controls
+        = link_to '入る', "users/#{current_user.id}", {:class => 'btn'}
+    -else
+      .controls
+        = link_to 'ログイン', 'users/sign_in', {:class => 'btn'}
+        %br
+        = link_to 'Sign Up' , 'users/sign_up'
