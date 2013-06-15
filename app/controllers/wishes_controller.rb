@@ -27,4 +27,16 @@ class WishesController < ApplicationController
     end
     redirect_to team_path team_id
   end
+
+  def skip
+    team_id = params[:team_id]
+    Team.transaction do |t|
+      team = Team.find(team_id, lock: true)
+      unless team.current_wish.nil?
+        team.current_wish = team.wishes.where(done: false).sample
+        team.save!
+      end
+    end
+    redirect_to team_path team_id
+  end
 end

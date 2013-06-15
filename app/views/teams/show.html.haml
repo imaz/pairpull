@@ -4,8 +4,8 @@
     %span.current-wish
       = @team.current_wish && @team.current_wish.title
     したい！
-    %button 別の！
-    = button_to 'オワタ！', team_wishes_done_path(@team), method: :get
+    = button_to '別の！', team_wishes_skip_path(@team), method: :get
+    = button_to 'オワタ！', team_wishes_done_path(@team), method: :post
 
 .pull-form
   %legend ペアでしたいことを見る
