@@ -9,6 +9,8 @@
     #container
       %header
         %h1 ペアプル
+        -if current_user
+          .login-user-name= link_to current_user.name, user_path(current_user)
       #contents
         = yield
       %footer
